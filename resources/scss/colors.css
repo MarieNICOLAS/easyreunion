@@ -1,0 +1,47 @@
+/*** colors variables ***/
+.easy-LightBlue {
+  color: #78A6EA;
+}
+
+.easy-green {
+  color: #31b983;
+}
+
+.easy-DarkBlue {
+  color: #0B3187;
+}
+
+.easyDarkBlue2 {
+  color: #613379;
+}
+
+.easy-BlueTxt {
+  color: #244693;
+}
+
+.easy-BlueTxtI {
+  color: #244693 !important;
+}
+
+.easy-Color {
+  color: #7e3300;
+}
+
+.white {
+  color: white !important;
+}
+
+.invisible {
+  color: transparent;
+}
+
+.easy-btnO {
+  background-color: rgba(11, 48, 135, 0.6078431373);
+}
+
+.mapLink {
+  color: #244693 !important;
+}
+.mapLink:hover {
+  color: #31b983 !important;
+}/*# sourceMappingURL=colors.css.map */

@@ -1,0 +1,81 @@
+.btn {
+    @apply inline-flex items-center justify-center px-5 py-2 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer font-medium p-3;
+    height: 10vh;
+}
+
+/* modifiers */
+.btn.dense {
+    @apply px-4 py-1.5;
+}
+
+.btn.wide {
+    @apply px-8 py-3;
+}
+
+/* btn info */
+.btn.info {
+    @apply bg-blue text-white;
+}
+
+.btn.info.light {
+    @apply bg-opacity-20 text-blue;
+}
+
+.btn.info:hover {
+    @apply bg-blue-600 text-white;
+}
+
+.btn.info.btn-active {
+    @apply bg-blue-dark;
+}
+
+
+/* btn success */
+.btn.success {
+    @apply bg-green text-white focus:ring-green;
+}
+
+.btn.success.light {
+    @apply bg-opacity-20 text-green;
+}
+
+.btn.success:hover {
+    @apply bg-green-600 text-white;
+}
+
+
+/* btn dark */
+.btn.dark {
+    @apply bg-blue-dark text-white focus:ring-blue-dark;
+}
+
+.btn.dark:hover {
+    @apply bg-purple;
+}
+
+/* btn danger */
+.btn.danger {
+    @apply bg-red text-white focus:ring-red;
+}
+
+.btn.danger:hover {
+    @apply bg-red-600;
+}
+
+/* btn neutral */
+.btn.neutral {
+    @apply text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-gray-200;
+}
+
+
+.btn.pink-reversed {
+    @apply bg-white text-pink focus:ring-pink-600;
+}
+
+.btn.success-reversed {
+    @apply bg-white text-green focus:ring-green-600;
+}
+
+.btn.warning-reversed {
+    @apply bg-white text-orange focus:ring-orange;
+}

@@ -1,0 +1,50 @@
+.calendar {
+    font-size: 10px;
+}
+
+.calendar .label {
+    font-size: 60%;
+    line-height: 40px;
+}
+@media screen and (min-width: 1400px) {
+    .calendar .label {
+        font-size: 75%;
+        line-height: 40px;
+    }
+}
+
+.calendar td {
+    @apply p-0;
+}
+
+.calendar td.salle em {
+    @apply block;
+}
+
+.calendar .tooltip {
+    @apply absolute bg-gray-100    border border-gray-300 p-4 text-base text-left font-sans text-black opacity-0 invisible transition pointer-events-none top-1/2 transform translate-x-0 -translate-y-1/2 flex flex-col gap-1;
+}
+
+.table-calendar tr.soiree td:first-child {
+    @apply border-l border-gray-400;
+}
+
+.calendar .tooltip .tooltip-status {
+    @apply inline-block py-1 px-2 rounded text-white text-sm mr-2 text-center cursor-pointer;
+}
+
+.calendar .tooltip .tooltip-date-hours {
+    @apply text-sm;
+}
+
+.calendar .tooltip .tooltip-date-days {
+    @apply text-base font-bold;
+}
+
+.time-selector {
+    min-width: 400px;
+}
+
+.calendar .salle span {
+    @apply text-xs 2xl:text-sm;
+}

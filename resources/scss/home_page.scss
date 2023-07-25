@@ -1,0 +1,334 @@
+#home_page_main {
+
+    .first, .second {
+        padding: 0px;
+    }
+
+    .container-diapo {
+
+        width: 700px;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            position: absolute;
+        }
+
+        & img:not(:first-child) {
+            display: none;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            span {
+                display: block;
+                width: 30px;
+                height: 30px;
+                background-color: #ffffff;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 30px;
+                font-size: 20px;
+                color: #000000;
+                cursor: pointer;
+            }
+
+            span:hover {
+                background-color: #f1f1f1;
+            }
+
+            .prev {
+                margin-left: 10px;
+            }
+
+            .next {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .forMobile {
+        display: none;
+    }
+
+
+    #searchbar-confirmation {
+        margin-top: 1px;
+        height: 40px;
+    }
+
+    header {
+
+        flex-wrap: wrap;
+
+        &>div {
+            padding-top: 100px; padding-left: 30px;
+        }
+        b {
+            font-weight: 500; font-size: 18px; letter-spacing: 1px; text-transform: uppercase;
+        }
+
+        h1 {
+            color: black; font-size: 40px; font-weight: 600; line-height: 60px
+        }
+        img {
+            width: 657px; height: 494px;
+        }
+    }
+
+
+    #bloc_event {
+
+        min-height: 500px;
+
+        #container_image {
+            width: 50%; min-height: 500px; overflow: hidden;
+            min-width: 300px;
+        }
+
+        #container_text {
+            width: 50%; background-color: #1A2940; padding: 80px 30px;
+            min-width: 300px;
+
+            &>div {
+                margin-bottom: 30px;
+            }
+
+            .first, .second {
+                width: 200px; font-size: 14px; position: relative;
+                min-width: 300px;
+            }
+
+
+        }
+    }
+
+    #bloc_easy {
+        min-height: 500px; padding: 0px 50px;
+
+        #container_text {
+            width: 50%; padding: 30px 40px;
+            min-width: 300px;
+            h3 {
+                font-size: 35px;
+            }
+
+            p {
+                font-size: 17px; text-align: justify; font-weight: normal;
+            }
+        }
+
+        #container_image {
+            width: 50%; overflow: hidden;  display: flex; flex-direction: column; justify-content: stretch;
+            min-width: 300px;
+            height: 500px;
+
+            #image_top {
+                flex: 1 1 50%; height: 234px; overflow: hidden
+            }
+
+            #image_left {
+                flex: 1 1 50%; height: 231px;
+
+                .signature {
+                    font-size: 15px;
+                }
+            }
+
+            #image_right {
+                width: 47%; overflow: hidden;
+                img {
+                    object-fit: cover; height: 100%; width: 100%;
+                }
+            }
+        }
+    }
+
+    #bloc_service {
+        min-height: 360px;
+
+        &>div:first-child {
+            background-color: $easyDarkBlue;
+        }
+
+        &>div {
+            width: 50%; padding: 40px 35px;
+            min-width: 300px;
+        }
+
+        .first, .second {
+            width: 200px; font-size: 14px; position: relative;
+        }
+        #container_text {
+            width: 50%; padding: 30px 40px;
+            min-width: 300px;
+
+            p { font-size: 17px}
+        }
+    }
+
+    #bloc_easy2 {
+        .first, .second {
+            width: 47%;
+            p {
+                font-size: 17px
+            }
+        }
+    }
+
+    #contact {
+        .first, .second {
+            width: 50%; height: 600px;
+            min-width: 300px;
+        }
+
+        img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .paddingBtn{
+            padding: 1rem;
+        }
+
+
+        #barReservationMobile {
+            width: 100%;
+        }
+
+        #headerBottom {
+            margin-top: 30px;
+        }
+
+        .forMobile {
+            display: block;
+            height: 100px;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                padding: 1rem;
+                border-radius: 2rem;
+            }
+        }
+        .forMobile2 {
+            height: 200px !important;
+        }
+
+        #container_text {
+            h3 {
+                margin: 0px!important;
+            }
+        }
+
+        .first, .second {
+            h3 {
+                margin: 0px!important;
+            }
+        }
+
+
+       header {
+           &>div {
+               padding: 0px;
+           }
+
+           b {
+                font-size: 0.8rem;
+                padding: 1rem;
+           }
+
+           h1 {
+               font-size: 2rem;
+               line-height: 3rem;
+               padding: 1rem;
+           }
+
+           button {
+               width: 100%;
+               margin-top: 15px;
+           }
+       }
+
+        #searchSpacesForm {
+            select, input, button {
+                width: 100%;
+            }
+        }
+
+        #bloc_event {
+            height: auto;
+
+            #container_image {
+                width: 100%;
+                min-height: auto;
+            }
+
+            #container_text {
+                width: 100%;
+                padding-left: 70px;
+
+                .first {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        #bloc_easy {
+            min-height: 500px; padding: 10px;
+
+            #container_text {
+                width: 100%;
+                padding: 10px;
+            }
+
+            #container_image {
+                min-width: auto;
+            }
+        }
+
+        #bloc_service {
+            height: auto;
+
+            &> div {
+                width: auto;
+            }
+
+            .first, .second {
+                margin-bottom: 30px;
+            }
+        }
+
+        #contact {
+            padding: 10px;
+
+            .first {
+                width: auto;
+            }
+
+            button, input, textarea, label {
+                width: 100%;
+            }
+
+            button {
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+
+
+   }
+}

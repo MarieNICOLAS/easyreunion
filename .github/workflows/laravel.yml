@@ -1,0 +1,105 @@
+name: tests
+on:
+  push:
+    branches:
+      - '**'
+jobs:
+  laravel-tests:
+    runs-on: ubuntu-latest
+    # Set environment
+    env:
+      DB_CONNECTION: mysql
+      DB_DATABASE: er-test
+      DB_PORT: 33306
+      DB_USER: root
+      DB_PASSWORD: root
+      TEST_DB_DATABASE: er-test
+      TEST_DB_PORT: 33306
+      TEST_DB_USERNAME: root
+      TEST_DB_PASSWORD: root
+      SESSION_CONNECTION: sessions_mysql
+      DB1_PORT: 33306
+      DB1_DATABASE: er-test
+      DB1_USER: root
+      DB1_PASSWORD: root
+
+    # Service container Mysql mysql
+    services:
+      # Label used to access the service container
+      mysql:
+        # Docker Hub image (also with version)
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: er-test
+        ## map the "external" 33306 port with the "internal" 3306
+        ports:
+          - 33306:3306
+        # Set health checks to wait until mysql database has started (it takes some seconds to start)
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    strategy:
+      matrix:
+        operating-system: [ ubuntu-latest ]
+        php-versions: [ '8.1' ]
+        dependency-stability: [ prefer-stable ]
+
+    name: P${{ matrix.php-versions }} - L${{ matrix.laravel }} - ${{ matrix.dependency-stability }} - ${{ matrix.operating-system}}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install PHP versions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+      - name: Get Composer Cache Directory 2
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - uses: actions/cache@v2
+        id: actions-cache
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+      - name: Cache PHP dependencies
+        uses: actions/cache@v2
+        id: vendor-cache
+        with:
+          path: vendor
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/composer.lock') }}
+      - name: Copy .env
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Install Dependencies
+        if: steps.vendor-cache.outputs.cache-hit != 'true'
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install
+      - run: npm run prod
+
+      - name: Generate key
+        run: php artisan key:generate
+      - name: Directory Permissions
+        run: chmod -R 777 storage bootstrap/cache
+      - name: Run Migrations
+        run: php artisan migrate
+      - name: Seed Database
+        run: php artisan db:seed
+
+      - name: Execute tests (Unit and Feature tests) via PHPUnit
+        run: php artisan test
+
+
+
+
+
+
+

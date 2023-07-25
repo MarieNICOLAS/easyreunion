@@ -1,0 +1,65 @@
+@import 'resources/scss/colors';
+
+h2{
+    color: $easyDarkBlue;
+    font-size: 1.6rem !important;
+    font-weight: 600 !important;
+    line-height: 1.9rem;
+}
+ @media (max-width: 768px){
+    h2{
+        font-size: 1rem !important;
+        line-height: 2rem;
+    }
+ }
+
+h3{
+    color: $easyDarkBlue !important;
+    font-size: 1.5rem !important;
+}
+@media (max-width: 768px){
+    h3{
+        margin-bottom: 1rem !important;
+        margin-left: 1rem !important;
+        font-size: 1rem !important;
+    }
+}
+.splitBar{
+    width: 100%;
+    border: solid 1px $easyDarkBlue;
+}
+
+p{
+    font-weight: 500;
+}
+.txt-space{
+    font-size: 12px !important;
+}
+// figcaption in grid space 
+.figcaption_Set{
+    width: 100%;
+    height: 100%;
+    padding-top: 0.5rem/* 8px */;
+    padding-bottom: 0.5rem/* 8px */;
+    font-weight: 700;
+    text-align: center;
+    &:hover p{
+        color: $easyLightBlue !important;
+    }
+}
+
+.fontDescription{
+    font-size: 0.7rem !important;
+}
+.fontDescription_Space-name{
+    font-size: 0.9rem !important;
+}
+
+@media (max-width: 768px){
+    .txt-mobil{
+        font-size: 1rem !important;
+    }
+    .noneMobil{
+        display: none;
+    }
+}

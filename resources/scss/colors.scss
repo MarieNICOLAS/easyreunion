@@ -1,0 +1,56 @@
+/*** colors variables ***/
+$easyLightBlue: #78A6EA;
+$easyDarkBlue: #0B3187;
+$easyDarkBlue2: #613379;
+$easyDarkBlueOpa: #0b30879b;
+$easyGreen: #31b983;
+$easyBtnBlue:#0B3187;
+$easyLightBlue2:#78A6EA7A;
+$easyColor: #7e3300;
+$tagsBgColor: #99999939;
+.easy-LightBlue{
+    color: $easyLightBlue;
+}
+.easy-green{
+    color: $easyGreen;
+}
+.easy-DarkBlue{
+    color: $easyDarkBlue;
+}
+.easyDarkBlue2{
+    color: $easyDarkBlue2;
+}
+.easy-BlueTxt{
+    color: $easyBtnBlue;
+}
+.easy-BlueTxtI{
+    color: $easyBtnBlue !important;
+}
+.easy-Color{
+    color: $easyColor;
+}
+.white{
+    color: white !important;
+}
+
+.invisible{
+    color: transparent;
+}
+.easy-btnO{
+    background-color: $easyDarkBlueOpa;
+}
+
+.mapLink{
+    color: $easyBtnBlue !important;
+    &:hover{
+        color: $easyGreen !important;
+    }
+}
+
+.mapLink2{
+     @apply text-white;
+     
+    &:hover{
+        color: $easyGreen !important;
+    }
+}

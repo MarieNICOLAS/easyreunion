@@ -1,0 +1,116 @@
+/**** Blog ***/
+#editBlogArticle .contentBloc {
+  display: flex;
+  flex-wrap: nowrap;
+}
+#editBlogArticle .mainPart {
+  width: 75%;
+  min-width: 200px;
+  border-right: 1px solid lightgray;
+  margin-right: 5%;
+}
+#editBlogArticle .rightPart {
+  max-width: 300px;
+}
+#editBlogArticle input, #editBlogArticle select, #editBlogArticle textarea {
+  width: 60%;
+  border-radius: 10px;
+}
+#editBlogArticle .row {
+  margin-bottom: 20px;
+}
+#editBlogArticle .blogArticleTextArea {
+  min-height: 200px;
+}
+#editBlogArticle .iconButton {
+  float: right;
+  display: flex;
+}
+#editBlogArticle .iconButton i {
+  cursor: pointer;
+}
+#editBlogArticle #category_name_list {
+  background-color: lightgrey;
+  width: 90%;
+  padding: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  z-index: 99;
+}
+#editBlogArticle #category_name_list li {
+  cursor: pointer;
+}
+#editBlogArticle #category_name_list li:hover {
+  background-color: lightblue;
+  color: dark;
+}
+#editBlogArticle #display-image {
+  width: 400px;
+  height: 225px;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+}
+#editBlogArticle .display-image-bloc {
+  width: 400px;
+  height: 225px;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+}
+#editBlogArticle .ql-tooltip {
+  left: 0px !important;
+  width: 44%;
+}
+#editBlogArticle .contentTextImgleft_content {
+  display: flex;
+  justify-content: space-around;
+}
+#editBlogArticle .contentTextImgleft_content .element {
+  width: 49%;
+}
+#editBlogArticle .contentTextImgleft_content {
+  display: flex;
+  justify-content: space-around;
+}
+#editBlogArticle .contentTextImgleft_content .element {
+  width: 49%;
+  text-align: justify;
+}
+
+.needToSave {
+  background-color: darkred !important;
+}
+
+.upToDate {
+  background-color: black !important;
+}
+
+#message {
+  z-index: 99;
+  width: 100%;
+  position: absolute;
+  background-color: lightblue;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.fade-out {
+  animation: fadeOut ease 5s;
+  -webkit-animation: fadeOut ease 5s;
+  -moz-animation: fadeOut ease 5s;
+  -o-animation: fadeOut ease 5s;
+  -ms-animation: fadeOut ease 5s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=customBack.css.map */

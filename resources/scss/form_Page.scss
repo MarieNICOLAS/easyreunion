@@ -1,0 +1,31 @@
+@import 'resources/scss/colors';
+
+/* formulaire style */
+
+.fromStyle label {
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus
+    {
+        transition: all 200ms ease-in-out;
+    }
+}
+
+
+input, textarea {
+    border: 1px solid black!important;
+}
+
+.imgDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 30vh;
+    gap: 8rem;
+    @media (max-width: 768px){
+        gap: 3rem;
+    }
+
+}
